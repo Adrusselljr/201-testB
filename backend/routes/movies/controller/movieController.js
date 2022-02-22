@@ -61,7 +61,6 @@ const updateOne = async (req, res) => {
 // Delete one
 const deleteOne =  async (req, res) => {
     const { id } = req.body
-    console.log(req.body)
     try {
         let deleteOne = await Movie.findByIdAndDelete(id)
         if(deleteOne === null) throw new Error("No movie with id found")
