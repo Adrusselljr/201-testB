@@ -25,7 +25,7 @@ const createMovie =  async (req, res) => {
 const getAll = async (req, res) => {
     try {
         let allMovies = await Movie.find()
-        res.status(200).json({ payload: allMovies })
+        res.status(200).json( allMovies )
     }
     catch (err) {
         res.status(500).json(err)
@@ -38,7 +38,7 @@ const getOne = async (req, res) => {
     const { id } = req.params
     try {
         let oneMovie = await Movie.findById(id)
-        res.status(200).json({ payload: oneMovie })
+        res.status(200).json( oneMovie )
     }
     catch (err) {
         res.status(500).json(err)
