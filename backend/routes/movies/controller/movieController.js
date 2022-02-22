@@ -54,7 +54,6 @@ const updateOne = async (req, res) => {
         res.status(200).json({ message: "updated movie", Movie: updateOne })
     }
     catch (err) {
-        console.log(err)
         res.status(500).json({ message: "error", error: err.message })
     }
 }
