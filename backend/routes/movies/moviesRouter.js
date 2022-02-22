@@ -10,7 +10,7 @@ router.get('/', function(req, res, next) {
 router.post('/create-movie', createMovie)
 router.get('/get-all-movies', getAll)
 router.get('/get-one-movie/:id', getOne)
-router.put('/update-movie/:id', updateOne)
-router.delete('/delete-movie/:id', deleteOne)
+router.put('/update-movie', updateOne)
+router.delete('/delete-movie', deleteOne)
 
 module.exports = router

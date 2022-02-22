@@ -47,20 +47,22 @@ const getOne = async (req, res) => {
 
 // Update one
 const updateOne = async (req, res) => {
-    const { id } = req.params
+    const { id } = req.body
     try {
         let updateOne = await Movie.findByIdAndUpdate(id, req.body, { new: true })
         if(updateOne === null) throw new Error("No movie with id found")
         res.status(200).json({ message: "updated movie", Movie: updateOne })
     }
     catch (err) {
+        console.log(err)
         res.status(500).json({ message: "error", error: err.message })
     }
 }
 
 // Delete one
 const deleteOne =  async (req, res) => {
-    const { id } = req.params
+    const { id } = req.body
+    console.log(req.body)
     try {
         let deleteOne = await Movie.findByIdAndDelete(id)
         if(deleteOne === null) throw new Error("No movie with id found")
